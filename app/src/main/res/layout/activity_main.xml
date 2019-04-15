@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_100sdp"
+        android:paddingLeft="@dimen/_24sdp"
+        android:paddingRight="@dimen/_24sdp">
+
+        <ImageView android:src="@drawable/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_72sdp"
+            android:layout_marginBottom="@dimen/_24sdp"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- Name Label -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp">
+            <EditText android:id="@+id/input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!--  Spinner Label -->
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:id="@+id/coordinator_layout">
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:spinnerMode="dialog"
+                android:prompt="@string/gender_prompt" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <!--  Age Label -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp">
+            <EditText android:id="@+id/input_age"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:inputType="numberDecimal"
+                android:hint="Enter Your Age" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- Start Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_started"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginBottom="@dimen/_24sdp"
+            android:padding="12dp"
+            android:layout_gravity="center"
+            android:text="Get Started" />
+
+
+    </LinearLayout>
+</ScrollView>
