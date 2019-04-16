@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btn = (Button)findViewById(R.id.btn_started);
+        final TextView nameview=(TextView) findViewById(R.id.input_name);
+        final TextView ageview= (TextView) findViewById(R.id.input_age);
 
         // Spinner element
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -50,7 +53,14 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, questions.class));
+                if(nameview.getText().toString().trim().equals("") && ageview.getText().toString().trim().equals(""))
+                {
+                    Toast.makeText(getApplicationContext(),"Some fields are required", Toast.LENGTH_LONG).show();
+                }
+                else if(!nameview.getText().toString().trim().equals("") && !ageview.getText().toString().trim().equals(""))
+                {
+                    startActivity(new Intent(MainActivity.this, questions.class));
+                }
             }
         });
     }
@@ -61,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         String item = parent.getItemAtPosition(position).toString();
 
         // Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_SHORT).show();
     }
 
 
